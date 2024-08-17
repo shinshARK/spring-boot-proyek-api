@@ -1,0 +1,656 @@
+{
+	"info": {
+		"_postman_id": "6e633ef6-bb39-4313-8266-7bf9a8902d41",
+		"name": "OpenAPI definition",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "lokasi",
+			"item": [
+				{
+					"name": "Add Lokasi A",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"namaLokasi\": \"Lokasi A\",\n  \"negara\": \"Indonesia\",\n  \"provinsi\": \"Jawa Barat\",\n  \"kota\": \"Kota Bandung\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/lokasi",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"lokasi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Lokasi B",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"namaLokasi\": \"Lokasi B\",\n  \"negara\": \"Indonesia\",\n  \"provinsi\": \"DKI Jakarta\",\n  \"kota\": \"Kota Administrasi Jakarta Utara\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/lokasi",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"lokasi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Lokasi C",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"namaLokasi\": \"Lokasi C\",\n  \"negara\": \"Indonesia\",\n  \"provinsi\": \"DKI Jakarta\",\n  \"kota\": \"Kota Administrasi Jakarta Barat\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/lokasi",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"lokasi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Lokasi D",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"namaLokasi\": \"Lokasi D\",\n  \"negara\": \"Indonesia\",\n  \"provinsi\": \"DKI Jakarta\",\n  \"kota\": \"Kota Administrasi Jakarta Selatan\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/lokasi",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"lokasi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Lokasi Null",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"namaLokasi\": null,\n  \"negara\": null,\n  \"provinsi\": null,\n  \"kota\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/lokasi",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"lokasi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Lokasi Blank",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"namaLokasi\": \"\",\n  \"negara\": \"\",\n  \"provinsi\": \"\",\n  \"kota\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/lokasi",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"lokasi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Lokasi",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/lokasi",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"lokasi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Lokasi",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"namaLokasi\": \"Lokasi A New\",\n  \"negara\": \"Indonesia\",\n  \"provinsi\": \"Jawa Barat\",\n  \"kota\": \"Kabupaten Bandung Barat\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/lokasi/:lokasiId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"lokasi",
+								":lokasiId"
+							],
+							"variable": [
+								{
+									"key": "lokasiId",
+									"value": "1",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Lokasi",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/lokasi/:lokasiId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"lokasi",
+								":lokasiId"
+							],
+							"variable": [
+								{
+									"key": "lokasiId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "proyek",
+			"item": [
+				{
+					"name": "Add Proyek A",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"namaProyek\": \"Proyek A\",\n  \"client\": \"Client A\",\n  \"tglMulai\": \"2024-08-10\",\n  \"tglSelesai\": \"2024-11-20\",\n  \"pimpinanProyek\": \"Pimpinan A\",\n  \"keterangan\": \"Keterangan Proyek A\",\n  \"lokasiIds\": [1, 2]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/proyek",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"proyek"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Proyek B",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"namaProyek\": \"Proyek B\",\n  \"client\": \"Client B\",\n  \"tglMulai\": \"2024-08-10\",\n  \"tglSelesai\": \"2024-11-20\",\n  \"pimpinanProyek\": \"Pimpinan B\",\n  \"keterangan\": \"Keterangan Proyek B\",\n  \"lokasiIds\": [3, 2]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/proyek",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"proyek"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Proyek Null",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"namaProyek\": null,\n  \"client\": null,\n  \"tglMulai\": null, \n  \"tglSelesai\": null,\n  \"pimpinanProyek\": null,\n  \"keterangan\": null,\n  \"lokasiIds\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/proyek",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"proyek"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Proyek Blank",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"namaProyek\": \"\",\n  \"client\": \"\",\n  \"tglMulai\": \"\",\n  \"tglSelesai\": \"\",\n  \"pimpinanProyek\": \"\",\n  \"keterangan\": \"\",\n  \"lokasiIds\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/proyek",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"proyek"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Proyek Invalid tglMulai",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"namaProyek\": \"Proyek Invalid\",\n  \"client\": \"Client Invalid\",\n  \"tglMulai\": \"2024-08-31\",\n  \"tglSelesai\": \"2024-08-26\", \n  \"pimpinanProyek\": \"Pimpinan XYZ\",\n  \"keterangan\": \"Keterangan Proyek XYZ\",\n  \"lokasiIds\": [3, 2]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/proyek",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"proyek"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Proyek & Locations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/proyek",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"proyek"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Proyek Reduce Loc",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"namaProyek\": \"Proyek A New\",\n  \"client\": \"Client A New\",\n  \"tglMulai\": \"2024-08-11\",\n  \"tglSelesai\": \"2024-09-11\",\n  \"pimpinanProyek\": \"New\",\n  \"keterangan\": \"New\",\n  \"lokasiIds\": [1]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/proyek/:proyekId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"proyek",
+								":proyekId"
+							],
+							"variable": [
+								{
+									"key": "proyekId",
+									"value": "1",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Proyek Add Loc",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"namaProyek\": \"Proyek A New\",\n  \"client\": \"Client A New\",\n  \"tglMulai\": \"2024-08-11\",\n  \"tglSelesai\": \"2024-09-11\",\n  \"pimpinanProyek\": \"New\",\n  \"keterangan\": \"New\",\n  \"lokasiIds\": [1, 2, 3]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/proyek/:proyekId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"proyek",
+								":proyekId"
+							],
+							"variable": [
+								{
+									"key": "proyekId",
+									"value": "1",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Proyek",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/proyek/:proyekId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"proyek",
+								":proyekId"
+							],
+							"variable": [
+								{
+									"key": "proyekId",
+									"value": "2",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
