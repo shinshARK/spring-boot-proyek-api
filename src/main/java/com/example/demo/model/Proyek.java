@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -31,8 +32,9 @@ public class Proyek {
     @Column(name = "keterangan", nullable = true)
     private String keterangan;
 
-    @Column(name = "created_at", insertable = false, updatable = false)
-    private LocalDateTime createdAt; // should i even have this?
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
+    private LocalDateTime createdAt;
 
     @ManyToMany
     @JoinTable(
@@ -46,16 +48,18 @@ public class Proyek {
     public Proyek() {
     }
 
-    public Proyek(String namaProyek, String client, LocalDate tglMulai, LocalDate tglSelesai, String pimpinanProyek, String keterangan) {
+    public Proyek(String namaProyek, String client, LocalDate tglMulai, LocalDate tglSelesai, String pimpinanProyek, String keterangan, List<Lokasi> lokasis) {
         this.namaProyek = namaProyek;
         this.client = client;
         this.tglMulai = tglMulai;
         this.tglSelesai = tglSelesai;
         this.pimpinanProyek = pimpinanProyek;
         this.keterangan = keterangan;
+        this.lokasis = lokasis;
     }
 
-    public Proyek(String namaProyek, String client, LocalDate tglMulai, LocalDate tglSelesai, String pimpinanProyek, String keterangan, LocalDateTime createdAt) {
+    public Proyek(Integer id, String namaProyek, String client, LocalDate tglMulai, LocalDate tglSelesai, String pimpinanProyek, String keterangan, LocalDateTime createdAt, List<Lokasi> lokasis) {
+        this.id = id;
         this.namaProyek = namaProyek;
         this.client = client;
         this.tglMulai = tglMulai;
@@ -63,6 +67,7 @@ public class Proyek {
         this.pimpinanProyek = pimpinanProyek;
         this.keterangan = keterangan;
         this.createdAt = createdAt;
+        this.lokasis = lokasis;
     }
 
     // Getters and Setters

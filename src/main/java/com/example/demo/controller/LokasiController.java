@@ -25,22 +25,20 @@ public class LokasiController {
     }
 
     @PostMapping
-    public ResponseEntity<Lokasi> addLokasi(@RequestBody Lokasi lokasi) {
+    public ResponseEntity<?> addLokasi(@RequestBody Lokasi lokasi) {
         return lokasiService.addLokasi(lokasi);
     }
 
     @PutMapping(path = "{lokasiId}")
     public ResponseEntity<Lokasi> updateLokasi(
             @PathVariable Integer lokasiId,
-            @RequestParam(required = false) String namaLokasi,
-            @RequestParam(required = false) String negara,
-            @RequestParam(required = false) String provinsi,
-            @RequestParam(required = false) String kota) {
-        return lokasiService.updateLokasi(lokasiId, namaLokasi, negara, provinsi, kota);
+            @RequestBody Lokasi lokasi) {
+
+        return lokasiService.updateLokasi(lokasiId, lokasi);
     }
 
     @DeleteMapping(path = "{lokasiId}")
-    public ResponseEntity<Lokasi> deleteLokasi(@RequestBody Lokasi lokasi) {
-        return lokasiService.deleteLokasi(lokasi);
+    public ResponseEntity<Lokasi> deleteLokasi(@PathVariable Integer lokasiId) {
+        return lokasiService.deleteLokasi(lokasiId);
     }
 }

@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static com.example.util.StringUtils.isNullOrEmpty;
+import static com.example.util.StringUtils.trimToNull;
+
 @Service
 public class LokasiService {
     private final LokasiRepository lokasiRepository;
@@ -25,16 +28,38 @@ public class LokasiService {
         return ResponseEntity.ok(lokasis);
     }
 
-    public ResponseEntity<Lokasi> addLokasi(Lokasi lokasi) {
+    public ResponseEntity<?> addLokasi(Lokasi lokasi) {
+        String namaLokasi = trimToNull(lokasi.getNamaLokasi());
+        String negara = trimToNull(lokasi.getNegara());
+        String provinsi = trimToNull(lokasi.getProvinsi());
+        String kota = trimToNull(lokasi.getKota());
+
+        if (isNullOrEmpty(namaLokasi) || isNullOrEmpty(negara) || isNullOrEmpty(provinsi) || isNullOrEmpty(kota)) {
+            return ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body("Lengkapi kolom yang dibutuhkan");
+        }
+
+        lokasi.setNamaLokasi(namaLokasi);
+        lokasi.setNegara(negara);
+        lokasi.setProvinsi(provinsi);
+        lokasi.setKota(kota);
+
+        lokasiRepository.save(lokasi);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @Transactional
-    public ResponseEntity<Lokasi> updateLokasi(Integer lokasiId, String namaLokasi, String negara, String provinsi, String kota) {
+    public ResponseEntity<Lokasi> updateLokasi(Integer lokasiId, Lokasi newLokasi) {
         Lokasi lokasi = lokasiRepository.findById(lokasiId).orElse(null);
         if (lokasi == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
+
+        String namaLokasi = newLokasi.getNamaLokasi();
+        String negara = newLokasi.getNegara();
+        String provinsi = newLokasi.getProvinsi();
+        String kota = newLokasi.getKota();
 
         if(namaLokasi != null && !namaLokasi.isEmpty() &&
                 !namaLokasi.equals(lokasi.getNamaLokasi())
@@ -63,12 +88,12 @@ public class LokasiService {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
-    public ResponseEntity<Lokasi> deleteLokasi(Lokasi lokasi) {
-        boolean exists = lokasiRepository.existsById(lokasi.getId());
+    public ResponseEntity<Lokasi> deleteLokasi(Integer lokasiId) {
+        boolean exists = lokasiRepository.existsById(lokasiId);
         if (!exists) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-        lokasiRepository.delete(lokasi);
+        lokasiRepository.deleteById(lokasiId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

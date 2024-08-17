@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
 
@@ -23,7 +24,8 @@ public class Lokasi {
     @Column(nullable = false)
     private String kota;
 
-    @Column(name = "created_at", insertable = false, updatable = false)
+    @CreationTimestamp
+    @Column(name = "created_at", updatable = false)
     private LocalDate createdAt;
 
     public Lokasi() {
@@ -34,6 +36,14 @@ public class Lokasi {
         this.negara = negara;
         this.provinsi = provinsi;
         this.kota = kota;
+    }
+
+    public Lokasi(String namaLokasi, String negara, String provinsi, String kota, LocalDate createdAt) {
+        this.namaLokasi = namaLokasi;
+        this.negara = negara;
+        this.provinsi = provinsi;
+        this.kota = kota;
+        this.createdAt = createdAt;
     }
 
     public Integer getId() {

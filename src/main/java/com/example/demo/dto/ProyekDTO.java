@@ -3,7 +3,7 @@ package com.example.demo.dto;
 import java.time.LocalDate;
 import java.util.List;
 
-public class ProyekUpdateRequest {
+public class ProyekDTO {
     private String namaProyek;
     private String client;
     private LocalDate tglMulai;
@@ -12,7 +12,7 @@ public class ProyekUpdateRequest {
     private String keterangan;
     private List<Integer> lokasiIds;
 
-    public ProyekUpdateRequest() {
+    public ProyekDTO() {
     }
 
     public String getNamaProyek() {

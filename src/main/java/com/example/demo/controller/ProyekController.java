@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.ProyekUpdateRequest;
+import com.example.demo.dto.ProyekDTO;
 import com.example.demo.model.Proyek;
 import com.example.demo.service.ProyekService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +25,15 @@ public class ProyekController {
     }
 
     @PostMapping
-    public ResponseEntity<?> addProyek(@RequestBody Proyek proyek) {
-        return proyekService.addProyek(proyek);
+    public ResponseEntity<?> addProyek(@RequestBody ProyekDTO proyekDTO) {
+
+        return proyekService.addProyek(proyekDTO);
     }
 
     @PutMapping(path = "{proyekId}")
     public ResponseEntity<?> updateProyek(
             @PathVariable("proyekId") Integer proyekId,
-            @RequestBody ProyekUpdateRequest updateRequest) {
+            @RequestBody ProyekDTO updateRequest) {
         return proyekService.updateProyek(proyekId, updateRequest);
     }
 
