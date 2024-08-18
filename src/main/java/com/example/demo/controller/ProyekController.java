@@ -24,6 +24,11 @@ public class ProyekController {
         return proyekService.getProyeks();
     }
 
+    @GetMapping(path = "{proyekId}")
+    public ResponseEntity<Proyek> getProyek(@PathVariable("proyekId") Integer proyekId) {
+        return proyekService.getProyek(proyekId);
+    }
+
     @PostMapping
     public ResponseEntity<?> addProyek(@RequestBody ProyekDTO proyekDTO) {
 

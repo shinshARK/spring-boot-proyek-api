@@ -149,6 +149,14 @@ public class ProyekService {
         proyekRepository.deleteById(proyekId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build(); // 204 No Content
     }
+
+    public ResponseEntity<Proyek> getProyek(Integer proyekId) {
+        Proyek proyek = proyekRepository.findById(proyekId).orElse(null);
+        if (proyek == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        return ResponseEntity.ok(proyek);
+    }
 }
 
 

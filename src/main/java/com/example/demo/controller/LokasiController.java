@@ -24,6 +24,11 @@ public class LokasiController {
         return lokasiService.getLokasis();
     }
 
+    @GetMapping(path = "{lokasiId}")
+    public ResponseEntity<Lokasi> getLokasi(@PathVariable Integer lokasiId) {
+        return lokasiService.getLokasi(lokasiId);
+    }
+
     @PostMapping
     public ResponseEntity<?> addLokasi(@RequestBody Lokasi lokasi) {
         return lokasiService.addLokasi(lokasi);

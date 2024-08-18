@@ -96,4 +96,12 @@ public class LokasiService {
         lokasiRepository.deleteById(lokasiId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+
+    public ResponseEntity<Lokasi> getLokasi(Integer lokasiId) {
+        Lokasi lokasi = lokasiRepository.findById(lokasiId).orElse(null);
+        if (lokasi == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        return ResponseEntity.ok(lokasi);
+    }
 }
